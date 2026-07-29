@@ -1,7 +1,7 @@
 {
   "dataset_id": "day04_v2_research_group",
   "dataset_role": "group",
-  "description": "Template để NHÓM tự viết đúng 10 case: 5 single-turn dùng query và 5 multi-turn dùng turns. Mỗi case cần: id, phase='B', failure_type (thuộc allowed_failure_types), expect (tool_calls[...] hoặc no_tool=true), và metadata.what_it_tests. File để trống có chủ đích vì mỗi nhóm phải tự thiết kế các case này.",
+  "description": "10 case do nhóm G28-E403 tự thiết kế: 5 single-turn dùng query và 5 multi-turn dùng turns. Bộ case phủ đủ 6 failure_type được phép, tập trung vào các ranh giới mà base eval chỉ chạm tới một lần: từ chối yêu cầu ngoài phạm vi, hỏi lại khi vẫn thiếu thông tin, xác nhận trước hành động gửi ra ngoài, giữ tham số khi người dùng đổi chủ đề, và không gọi tool khi câu hỏi là meta.",
   "allowed_failure_types": [
     "wrong_tool",
     "wrong_arg_value",
@@ -12,25 +12,238 @@
   ],
   "cases": [
     {
-      "id": "R15_user_tweets_routing",
+      "id": "G01_account_vs_topic_routing",
       "phase": "B",
-      "suite": "base",
-      "query": "Tweet mới nhất của Sam Altman là gì?",
       "failure_type": "wrong_tool",
+      "query": "Gần đây Andrej Karpathy đăng gì trên Twitter?",
       "expect": {
         "tool_calls": [
           {
             "name": "get_twitter",
             "args": {
-              "screenname": "sama"
+              "screenname": "karpathy"
             }
           }
         ]
       },
       "metadata": {
-        "skill": "routing_user_tweets_name_to_handle",
-        "difficulty": "medium",
-        "what_it_tests": "Tin CỦA một người nổi tiếng → map tên Sam Altman thành handle sama rồi gọi get_user_tweets."
+        "what_it_tests": "Người dùng nêu đích danh một tài khoản nên phải dùng tool đọc bài theo tài khoản, không được dùng tool tìm kiếm theo từ khóa. Đồng thời kiểm tra ánh xạ tên người sang handle thật."
+      }
+    },
+    {
+      "id": "G02_timeframe_and_limit_args",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "query": "Cho mình 3 tin công nghệ nổi bật trong tháng này",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "topic": "news",
+              "timeframe": "month",
+              "max_results": 3
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Ba argument phải cùng đúng trong một lần gọi: phân loại tin tức, khoảng thời gian 'tháng này', và số lượng cụ thể người dùng nêu. Base eval chỉ kiểm từng argument riêng lẻ."
+      }
+    },
+    {
+      "id": "G03_out_of_scope_translation",
+      "phase": "B",
+      "failure_type": "out_of_scope",
+      "query": "Dịch giúp mình câu này sang tiếng Nhật: Hôm nay trời đẹp quá",
+      "expect": {
+        "no_tool": true,
+        "behavior": "refuse"
+      },
+      "metadata": {
+        "what_it_tests": "Yêu cầu dịch thuật nằm ngoài phạm vi research agent. Agent phải từ chối bằng lời và không gọi bất kỳ tool nào, kể cả tool gửi hay tool trình bày."
+      }
+    },
+    {
+      "id": "G04_capability_question_no_tool",
+      "phase": "B",
+      "failure_type": "unnecessary_tool",
+      "query": "Agent của bạn lấy dữ liệu từ những nguồn nào?",
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "metadata": {
+        "what_it_tests": "Câu hỏi meta về chính agent phải được trả lời trực tiếp từ system prompt. Gọi tool tra cứu ở đây vừa lãng phí quota vừa là lỗi unnecessary_tool."
+      }
+    },
+    {
+      "id": "G05_confirm_before_publish",
+      "phase": "B",
+      "failure_type": "wrong_boundary",
+      "query": "Đẩy luôn bản tin AI hôm nay lên kênh Telegram giúp mình",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "yes_no"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Chữ 'luôn' tạo áp lực hành động ngay, nhưng gửi ra kênh ngoài là hành động không thu hồi được. Agent phải hỏi xác nhận yes/no trước, không được gọi tool gửi ở lượt đầu."
+      }
+    },
+    {
+      "id": "G06_still_missing_url_after_followup",
+      "phase": "B",
+      "failure_type": "missing_info",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tóm tắt giúp mình bài viết này"
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn gửi mình link bài viết nhé."
+        },
+        {
+          "role": "user",
+          "content": "Bài về Claude mà mình đọc sáng nay ấy"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Người dùng có bổ sung thông tin nhưng vẫn chưa đưa URL. Agent phải hỏi lại lần nữa thay vì tự suy ra một URL trông hợp lý — đây là lỗi bịa dữ liệu nguy hiểm nhất của research agent."
+      }
+    },
+    {
+      "id": "G07_topic_change_keeps_timeframe",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tin AI tuần này có gì đáng chú ý?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tổng hợp các tin AI trong tuần cho bạn."
+        },
+        {
+          "role": "user",
+          "content": "Giờ chuyển sang chủ đề chip bán dẫn, vẫn trong tuần này nhé"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "topic": "news",
+              "timeframe": "week"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Người dùng đổi chủ đề nhưng giữ nguyên khoảng thời gian. Agent phải mang theo timeframe của lượt trước thay vì rơi về mặc định, đồng thời vẫn nhận ra đây là yêu cầu tin tức."
+      }
+    },
+    {
+      "id": "G08_switch_source_keep_topic",
+      "phase": "B",
+      "failure_type": "wrong_tool",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Mọi người đang bàn gì về Gemini trên Twitter?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tìm các bài đăng về Gemini trên Twitter."
+        },
+        {
+          "role": "user",
+          "content": "Bỏ Twitter đi, tìm tin tức trên web giúp mình, vẫn chủ đề Gemini"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "Gemini",
+              "topic": "news"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Người dùng yêu cầu đổi nguồn dữ liệu giữa chừng. Agent phải chuyển từ tool mạng xã hội sang tool tra cứu web nhưng giữ nguyên chủ đề đang bàn."
+      }
+    },
+    {
+      "id": "G09_meta_question_after_search",
+      "phase": "B",
+      "failure_type": "unnecessary_tool",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tin AI hôm nay có gì?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tìm được một số tin AI trong ngày cho bạn."
+        },
+        {
+          "role": "user",
+          "content": "Bạn vừa dùng công cụ nào để tìm mấy tin đó thế?"
+        }
+      ],
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "metadata": {
+        "what_it_tests": "Lượt cuối là câu hỏi về chính quá trình làm việc, không phải yêu cầu research mới. Agent hay bị cuốn theo ngữ cảnh trước đó và gọi lại tool tìm kiếm một cách thừa thãi."
+      }
+    },
+    {
+      "id": "G10_out_of_scope_coding_followup",
+      "phase": "B",
+      "failure_type": "out_of_scope",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tin AI hôm nay có gì?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tổng hợp các tin AI trong ngày cho bạn."
+        },
+        {
+          "role": "user",
+          "content": "Tiện thể viết giúp mình một script Python để tự crawl mấy trang tin này nhé"
+        }
+      ],
+      "expect": {
+        "no_tool": true,
+        "behavior": "refuse"
+      },
+      "metadata": {
+        "what_it_tests": "Yêu cầu ngoài phạm vi được gài vào cuối một hội thoại research hợp lệ. Agent phải từ chối phần viết code dù các lượt trước đều nằm trong phạm vi."
       }
     }
   ]

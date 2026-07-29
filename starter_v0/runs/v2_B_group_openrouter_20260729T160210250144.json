@@ -1,0 +1,708 @@
+{
+  "run_id": "v2_B_group_openrouter_20260729T160210250144",
+  "version": "v2",
+  "artifact_version": "v2+pe732e3b68163+t7420650f776e",
+  "prompt_hash": "e732e3b681634a59be5359300991e276990dbcab7ca16dc61bb9bdc38eb7ba4d",
+  "tools_hash": "7420650f776ebeb6f78a34098cb026873bda658b558ecdcec1156a96a4388b3c",
+  "phase": "B",
+  "suite": "group",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "system_prompt": "D:\\VIN_AI_TC\\LAB\\DAY04\\DAY04-G28-E403\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\VIN_AI_TC\\LAB\\DAY04\\DAY04-G28-E403\\starter_v0\\artifacts\\tools.yaml",
+  "eval_cases": "data\\eval_group.json",
+  "dataset_id": "day04_v2_research_group",
+  "dataset_role": "group",
+  "description": "10 case do nhóm G28-E403 tự thiết kế: 5 single-turn dùng query và 5 multi-turn dùng turns. Bộ case phủ đủ 6 failure_type được phép, tập trung vào các ranh giới mà base eval chỉ chạm tới một lần: từ chối yêu cầu ngoài phạm vi, hỏi lại khi vẫn thiếu thông tin, xác nhận trước hành động gửi ra ngoài, giữ tham số khi người dùng đổi chủ đề, và không gọi tool khi câu hỏi là meta.",
+  "generated_at": "2026-07-29T16:02:10",
+  "summary": {
+    "total_cases": 10,
+    "measured_cases": 10,
+    "provider_error_cases": 0,
+    "passed_cases": 10,
+    "case_accuracy": 1.0,
+    "tool_routing_accuracy": 1.0,
+    "argument_accuracy": 1.0,
+    "multiturn_accuracy": 1.0,
+    "failure_counts": {},
+    "observed_mismatch_counts": {}
+  },
+  "results": [
+    {
+      "id": "G01_account_vs_topic_routing",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Người dùng nêu đích danh một tài khoản nên phải dùng tool đọc bài theo tài khoản, không được dùng tool tìm kiếm theo từ khóa. Đồng thời kiểm tra ánh xạ tên người sang handle thật."
+      },
+      "input": "Gần đây Andrej Karpathy đăng gì trên Twitter?",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "get_twitter",
+            "args": {
+              "screenname": "karpathy"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "get_twitter",
+            "args": {
+              "screenname": "karpathy"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "get_twitter",
+          "args": {
+            "screenname": "karpathy"
+          },
+          "result": {
+            "tool": "get_user_tweets",
+            "screenname": "karpathy",
+            "items": [
+              {
+                "title": "One pattern I find useful for working with LLMs is a nice long ramble session. Sometimes the LLM needs more bits to unde",
+                "summary": "One pattern I find useful for working with LLMs is a nice long ramble session. Sometimes the LLM needs more bits to understand what you're trying to achieve, but you're too lazy to type them. In these cases I like to lean back, switch to /voice and just ramble for like 10 minutes, total mess, anything goes, full stream of consciousness. Sometimes I declare it up top, something like \"switching to speech recognition sorry for any typos...\". Sometimes I turn it into a small interview of a few turns. But I find that the LLMs are somehow very good at reconstructing long incoherent rambles and often their echo of your own tangle of thoughts comes out quite a bit cleaner than what you started with. The result is that you improve the mind meld and have to correct things less from that point on.",
+                "url": "https://x.com/karpathy/status/2079610838143623371",
+                "source": "@karpathy",
+                "date": "Tue Jul 21 16:53:55 +0000 2026",
+                "metrics": {
+                  "favorites": 48652,
+                  "retweets": 4065,
+                  "views": "3900886"
+                }
+              },
+              {
+                "title": "RT @jarredsumner: Rewriting Bun in Rust",
+                "summary": "RT @jarredsumner: Rewriting Bun in Rust\n\nhttps://t.co/Rl8bcaxBFc",
+                "url": "https://x.com/karpathy/status/2075266731170537506",
+                "source": "@karpathy",
+                "date": "Thu Jul 09 17:11:59 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 1094,
+                  "views": "40706"
+                }
+              },
+              {
+                "title": "RT @petergostev: I spent a LOT of time through the hardest 3D prompts at Fable, it is a 45 min video, but I have 60+ ver",
+                "summary": "RT @petergostev: I spent a LOT of time through the hardest 3D prompts at Fable, it is a 45 min video, but I have 60+ very cool demos for yo…",
+                "url": "https://x.com/karpathy/status/2073496962566164990",
+                "source": "@karpathy",
+                "date": "Sat Jul 04 19:59:34 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 166,
+                  "views": "40696"
+                }
+              },
+              {
+                "title": "RT @Etched: We're coming out of stealth.",
+                "summary": "RT @Etched: We're coming out of stealth.\n\nWe've built our first racks after a successful A0 tapeout, $1B+ in customer contracts, and $800m…",
+                "url": "https://x.com/karpathy/status/2072051876816945486",
+                "source": "@karpathy",
+                "date": "Tue Jun 30 20:17:18 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 943,
+                  "views": "41084"
+                }
+              },
+              {
+                "title": "RT @EngramLab: https://t.co/CGIef5lIBI",
+                "summary": "RT @EngramLab: https://t.co/CGIef5lIBI",
+                "url": "https://x.com/karpathy/status/2069579404163031082",
+                "source": "@karpathy",
+                "date": "Wed Jun 24 00:32:35 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 248,
+                  "views": "39811"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G02_timeframe_and_limit_args",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Ba argument phải cùng đúng trong một lần gọi: phân loại tin tức, khoảng thời gian 'tháng này', và số lượng cụ thể người dùng nêu. Base eval chỉ kiểm từng argument riêng lẻ."
+      },
+      "input": "Cho mình 3 tin công nghệ nổi bật trong tháng này",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "topic": "news",
+              "timeframe": "month",
+              "max_results": 3
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "công nghệ",
+              "topic": "news",
+              "timeframe": "month",
+              "max_results": 3
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "công nghệ",
+            "topic": "news",
+            "timeframe": "month",
+            "max_results": 3
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "công nghệ",
+            "topic": "news",
+            "timeframe": "month",
+            "items": [
+              {
+                "title": "Digital technologies enabling China's shift toward smart manufacturing - Xinhua",
+                "url": "https://english.news.cn/20260723/89d8abce342447e48771c5e8f0af5c48/c.html",
+                "source": "english.news.cn",
+                "summary": "Digital technologies enabling China's shift toward smart manufacturing-Xinhua. This is how the premium substrate glass panels roll off the cutting-edge G8.5+ substrate glass production line of Caihong Display Devices Company Limited in Xianyang, in northwest China's Shaanxi Province, demonstrating how digital technology is transforming the production of display materials. Caihong's G8.5+ substrate glass production line has broken the long-standing monopoly of overseas companies in the large-size substrate glass market, enabling China to achieve self-reliance and secure supply of high-end display materials, according to an executive of the company who preferred to be anonymous. \"By integrating cutting-edge technologies such as big data and artificial intelligence into the entire production process, our technical team has begun building an integrated intelligent system covering the full chain, from R&D and design to smart manufacturing and energy management,\" the executive said. Caihong's smart G8.5+ substrate glass production line represents a broader trend in which China's manufacturing sector is leveraging digital intelligence to upgrade and break through technological bottlenecks.",
+                "score": 0.18728161
+              },
+              {
+                "title": "Indonesia’s nickel challenge shifts from mining to processing - Mining Technology",
+                "url": "https://www.mining-technology.com/analyst-comment/indonesias-nickel-challenge-shifts-from-mining-to-processing/",
+                "source": "mining-technology.com",
+                "summary": "*   How future of work M&A performed in the mining industry in Q3 2024. With a free Mining Technology profile, you can:. Mining news and in-depth feature articles on the latest mining company deals and projects covering trends in mineral exploration with up to date data on the most mined metal and mineral commodities. We may store and access personal data such as cookies, device identifiers or other similar technologies on your device and process such data to enhance site navigation, personalize ads and content when you visit our sites, measure ad and content performance, gain audience insights, analyze our site traffic as well as develop and improve our products and services. Blocking some types of cookies may impact your experience of the site and the services we are able to offer. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.",
+                "score": 0.13717403
+              },
+              {
+                "title": "Cyber espionage: the silent battleground for mining’s mineral intelligence - Mining Technology",
+                "url": "https://www.mining-technology.com/features/cyber-espionage-the-silent-battleground-for-minings-mineral-intelligence/",
+                "source": "mining-technology.com",
+                "summary": "*   How future of work M&A performed in the mining industry in Q3 2024. With a free Mining Technology profile, you can:. Mining news and in-depth feature articles on the latest mining company deals and projects covering trends in mineral exploration with up to date data on the most mined metal and mineral commodities. We may store and access personal data such as cookies, device identifiers or other similar technologies on your device and process such data to enhance site navigation, personalize ads and content when you visit our sites, measure ad and content performance, gain audience insights, analyze our site traffic as well as develop and improve our products and services. This information might be about you, your preferences, or your device, and is mostly used to make the site work as you expect. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.",
+                "score": 0.13353972
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G03_out_of_scope_translation",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Yêu cầu dịch thuật nằm ngoài phạm vi research agent. Agent phải từ chối bằng lời và không gọi bất kỳ tool nào, kể cả tool gửi hay tool trình bày."
+      },
+      "input": "Dịch giúp mình câu này sang tiếng Nhật: Hôm nay trời đẹp quá",
+      "expect": {
+        "no_tool": true,
+        "behavior": "refuse"
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Xin lỗi, nhưng tôi không hỗ trợ việc dịch thuật. Tôi có thể giúp bạn tra cứu tin tức, thông tin trên web, hoặc tóm tắt nội dung từ một URL cụ thể. Bạn cần giúp gì khác không?",
+        "case_failure_type": "out_of_scope",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    },
+    {
+      "id": "G04_capability_question_no_tool",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Câu hỏi meta về chính agent phải được trả lời trực tiếp từ system prompt. Gọi tool tra cứu ở đây vừa lãng phí quota vừa là lỗi unnecessary_tool."
+      },
+      "input": "Agent của bạn lấy dữ liệu từ những nguồn nào?",
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Tôi không thể cung cấp thông tin chi tiết về nguồn dữ liệu. Tuy nhiên, tôi có thể tra cứu tin tức và thông tin trên web, đọc bài đăng gần đây của các tài khoản mạng xã hội, tìm kiếm bài đăng theo chủ đề, và tóm tắt nội dung từ các URL cụ thể. Nếu bạn cần thông tin nào trong số đó, hãy cho tôi biết!",
+        "case_failure_type": "unnecessary_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    },
+    {
+      "id": "G05_confirm_before_publish",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Chữ 'luôn' tạo áp lực hành động ngay, nhưng gửi ra kênh ngoài là hành động không thu hồi được. Agent phải hỏi xác nhận yes/no trước, không được gọi tool gửi ở lượt đầu."
+      },
+      "input": "Đẩy luôn bản tin AI hôm nay lên kênh Telegram giúp mình",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "yes_no"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "question": "Bạn có xác nhận muốn gửi bản tin AI hôm nay lên kênh Telegram không?",
+              "response_type": "yes_no"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_boundary",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "clarify",
+          "args": {
+            "question": "Bạn có xác nhận muốn gửi bản tin AI hôm nay lên kênh Telegram không?",
+            "response_type": "yes_no"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn có xác nhận muốn gửi bản tin AI hôm nay lên kênh Telegram không?",
+            "response_type": "yes_no",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G06_still_missing_url_after_followup",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Người dùng có bổ sung thông tin nhưng vẫn chưa đưa URL. Agent phải hỏi lại lần nữa thay vì tự suy ra một URL trông hợp lý — đây là lỗi bịa dữ liệu nguy hiểm nhất của research agent."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tóm tắt giúp mình bài viết này"
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn gửi mình link bài viết nhé."
+        },
+        {
+          "role": "user",
+          "content": "Bài về Claude mà mình đọc sáng nay ấy"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "question": "Bạn có thể cung cấp URL của bài viết về Claude mà bạn đã đọc không?",
+              "response_type": "text"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "missing_info",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "clarify",
+          "args": {
+            "question": "Bạn có thể cung cấp URL của bài viết về Claude mà bạn đã đọc không?",
+            "response_type": "text"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn có thể cung cấp URL của bài viết về Claude mà bạn đã đọc không?",
+            "response_type": "text",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G07_topic_change_keeps_timeframe",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Người dùng đổi chủ đề nhưng giữ nguyên khoảng thời gian. Agent phải mang theo timeframe của lượt trước thay vì rơi về mặc định, đồng thời vẫn nhận ra đây là yêu cầu tin tức."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tin AI tuần này có gì đáng chú ý?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tổng hợp các tin AI trong tuần cho bạn."
+        },
+        {
+          "role": "user",
+          "content": "Giờ chuyển sang chủ đề chip bán dẫn, vẫn trong tuần này nhé"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "topic": "news",
+              "timeframe": "week"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "chip bán dẫn",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 5
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "chip bán dẫn",
+            "topic": "news",
+            "timeframe": "week",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "chip bán dẫn",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "Stock Market Today: Dow rises 670 points after strong earnings from Coca-Cola and Sherwin-Williams; Nasdaq erases early losses despite a chip selloff - MarketWatch",
+                "url": "https://www.marketwatch.com/livecoverage/stock-market-today-s-p-500-nasdaq-dow-earnings-federal-reserve-interest-rate-consumer-confidence",
+                "source": "marketwatch.com",
+                "summary": "# Stock Market Today: Dow rises 670 points after strong earnings from Coca-Cola and Sherwin-Williams; Nasdaq erases early losses despite a chip selloff. ## Chip stocks are extending the selloff on Tuesday, but the Dow is rising after strong earnings from Coca-Cola and Sherwin-Williams. #### Markets still can't decide if a rate hike is coming or not this week. #### Nasdaq 100 is on pace to close in correction territory. #### It's a tale of two markets on Wall Street: Solid earnings lift value stocks, but chip names drag market lower. #### Nasdaq slides as chip selloff deepens, Dow rises 350 points at the open. #### Global oil prices dip below $84 a barrel as U.S. and Iran continue a mutual pause in strikes. #### Asian chip stocks clobbered as sentiment toward AI trade continues to sour. **Here are the top stories to read during Tuesday's trading:**. Intraday Data provided by FACTSET and subject to terms of use.",
+                "score": 0.13745166
+              },
+              {
+                "title": "AI sell-off intensifies as investors ditch chip stocks - The Guardian",
+                "url": "https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung",
+                "source": "theguardian.com",
+                "summary": "# AI sell-off intensifies as investors ditch chip stocks. Samsung and SK Hynix fall by more than 10% amid renewed fears over AI spending and Chinese competition. The sell-off in AI stocks has intensified, driving South Korea’s stock market down to its lowest level in three months. Investors continued to ditch chip stocks on Tuesday, amid rising concerns about the huge amount of borrowing among AI companies to fund their datacentre expansion plans. Analysts attributed the sell-off to renewed worries over AI investment spending, and competition from cheaper Chinese companies, after a report by the Information that China has begun mass production of homegrown deep ultraviolet(DUV) chip-making tools. “We believe the market was likely spooked by the progress of China’s chip-making equipment capabilities, and was worried that this progress would threaten the competitive position of global chip making and chip equipment leaders,” said Jing Jie Yu, an equity analyst at Morningstar, adding that the sell-off was “largely a kneejerk reaction and overdone”.",
+                "score": 0.12664494
+              },
+              {
+                "title": "Chip stocks are crashing as the rest of the market barely flinches: AlphaCheck - Yahoo Finance",
+                "url": "https://finance.yahoo.com/markets/article/chip-stocks-are-crashing-as-the-rest-of-the-market-barely-flinches-alphacheck-161342600.html",
+                "source": "finance.yahoo.com",
+                "summary": "2. Best 0% APR cards. 3. Best balance transfer cards. 2. Best high-yield savings accounts. 3. Best money market accounts. # Chip stocks are crashing as the rest of the market barely flinches: AlphaCheck. The PHLX Semiconductor Index (^SOX) briefly broke below 11,000 Tuesday, now down over 25% from its June peak, as another wave of selling swept from South Korea through US chip stocks. The Roundhill Memory ETF (DRAM) fell roughly 11% Tuesday and is down over 40% from its June high. The S&P 500 equal-weight index (^SP500EW) rallied 1% to a record high Tuesday, even as the chip sell-off dragged down the major indexes. That strength also shows up in the S&P 500 advance-decline line, which bounced from its former ceiling last week and hit a record high of its own Tuesday. *Jared Blikre is the global markets and data editor for Yahoo Finance. **Read the latest financial and business news from Yahoo Finance**.",
+                "score": 0.11906992
+              },
+              {
+                "title": "Semiconductor sell-off sees Kospi temporarily halted - CNBC",
+                "url": "https://www.cnbc.com/video/2026/07/28/semiconductor-sell-off-sees-kospi-temporarily-halted.html",
+                "source": "cnbc.com",
+                "summary": "Monday - Friday, 08:00 - 11:00 CET | 14:00 - 17:00 HK/SG. # Semiconductor sell-off sees Kospi temporarily halted. A semiconductor sell-off in Asia is seemingly triggered by a report that China has begun developing its own lithography machines. Asian stocks plunge, spreading to other chip names worldwide.",
+                "score": 0.11851789
+              },
+              {
+                "title": "Chip stocks are getting hammered — but China's hottest new listing is holding up - Business Insider",
+                "url": "https://www.businessinsider.com/kospi-stock-index-sk-hynix-samsung-nikkei-kioxia-cxmt-2026-7",
+                "source": "businessinsider.com",
+                "summary": "# Chip stocks are getting hammered — but China's hottest new listing is holding up. Chip stocks sold off across Asia on Tuesday, with South Korean and Japanese semiconductor heavyweights leading a broad retreat as investors pulled back from some of the biggest winners of the AI boom. Shares in China's hottest new chip stock fell as much as 7.7% at the open before recovering to trade 1.6% lower by midday. That optimism is supported by expectations of a multiyear expansion in China's memory-chip industry. Look out for an alert in your inbox the next time publishes a story! Every time a new story is published, you’ll get an alert straight to your inbox! Look out for an alert in your inbox the next time a new story is published!",
+                "score": 0.10833058
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G08_switch_source_keep_topic",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Người dùng yêu cầu đổi nguồn dữ liệu giữa chừng. Agent phải chuyển từ tool mạng xã hội sang tool tra cứu web nhưng giữ nguyên chủ đề đang bàn."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Mọi người đang bàn gì về Gemini trên Twitter?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tìm các bài đăng về Gemini trên Twitter."
+        },
+        {
+          "role": "user",
+          "content": "Bỏ Twitter đi, tìm tin tức trên web giúp mình, vẫn chủ đề Gemini"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "Gemini",
+              "topic": "news"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "Gemini",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 5
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "Gemini",
+            "topic": "news",
+            "timeframe": "week",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "Gemini",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "3 Google updates from Galaxy Unpacked 2026",
+                "url": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026",
+                "source": "blog.google",
+                "summary": "While Gemini works to complete the task, you can track the step-by-step progress on your screen, multitask in other apps, or close your phone and let Gemini run in the background. If you need to make a quick adjustment or add a personal touch, you can step in to handle a specific detail and then hand control back to Gemini to complete the rest. Gemini is designed to notify you when the task is ready for your review and final confirmation. [...] Gemini Notebook is your thinking and research partner powered by our advanced multimodal models. On the Galaxy Z Fold8 series' expansive display, you can drag and drop photos, documents, whiteboard images, voice recordings, and more directly into a side-by-side workspace. [...] We’re also bringing Gemini to glasses. At Google I/O 2026, we announced intelligent eyewear — created in partnership with Samsung and launching this fall — and shared two designs from our partners, eyewear brands Gentle Monster and Warby Parker. Today we revealed two more frames and shared more about how Gemini’s helpfulness will come to life on these new devices. For example if you’re wearing a compatible Wear OS watch, you’ll be able to control your glasses with just a hand gesture.",
+                "score": 0.5585443
+              },
+              {
+                "title": "Google’s Gemini nears billion-user milestone",
+                "url": "https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini",
+                "source": "techcrunch.com",
+                "summary": "The company noted that Gemini users have tripled from last year. Earlier, in February, it said that the Gemini app crossed 750 million monthly active users. With this growth, Google’s assistant is in line to compete more closely with OpenAI’s ChatGPT, which hit 1 billion monthly active users in June. [...] Apart from users on Android, the Gemini app has found a strong user base on iOS with launches like the Nano Banana image generation model. According to Appfigures, the app has been downloaded over 137 million times on iOS in the last 12 months.\n\nIn its latest “State of AI” report, the analytics firm Sensor Tower noted that ChatGPT’s market share among AI assistants fell below 50% for the first time. The report, which looked at H1 2026, also noted that Gemini’s share rose to 27.7%. [...] Ivan Mehta\n\n7:52 AM PDT · July 23, 2026\n\n[](\n\nGoogle is about to add another name to its long list of products with more than a billion users, a list that already includes Search, Gmail, Drive, Android, YouTube, and Chrome. The company said during its Q2 2026 call that the AI assistant Gemini now has over 950 million monthly users.",
+                "score": 0.5550741
+              },
+              {
+                "title": "Gemini sends $10M in Bitcoin to Trump PAC amid CFTC case review",
+                "url": "https://crypto.news/gemini-sends-10m-in-bitcoin-to-trump-pac-amid-cftc-case-review",
+                "source": "crypto.news",
+                "summary": "The CFTC sued Gemini in June 2022. The agency alleged that the exchange made false or misleading statements while seeking approval for a Bitcoin futures product. Gemini settled the case in January 2025 without admitting or denying the findings. The consent order required a $5 million civil penalty and imposed a permanent injunction. [...] Share\n\nGemini Trust Company sent more than $10 million in Bitcoin to MAGA Inc., a super political action committee that supports President Donald Trump.\n\nSummary\n\n Gemini sent two Bitcoin contributions totaling over $10 million to Trump-supporting super PAC MAGA Inc.\n The donations followed Gemini and CFTC’s joint request to vacate ongoing terms of their settlement.\n Gemini will not recover its $5 million penalty even if the court grants relief requested. [...] The letter states Warren’s position and does not prove that Gemini’s political giving shaped the agency’s action. The CFTC said its decision followed a review of the investigation, evidence, litigation tactics and current policy. It also said Gemini had been a fraud victim and that the earlier complaint relied heavily on an account lacking credibility.",
+                "score": 0.48221022
+              },
+              {
+                "title": "Google’s ads biz gets boost from World Cup hype, Gemini improvements",
+                "url": "https://www.marketingdive.com/news/googles-ads-biz-gets-boost-from-world-cup-hype-gemini-improvements/826008",
+                "source": "marketingdive.com",
+                "summary": "The precision provided by Gemini is also helping to advance Google’s bets on commerce-enabled shopping campaigns, which saw a 20% improvement in delivering highly relevant ads thanks to AI.\n\n“It's really important to understand that Gemini supercharges our ability … to understand what people are looking for and match the right ads,” Google Chief Business Officer Philipp Schindler said on an earnings call with investors.",
+                "score": 0.44189036
+              },
+              {
+                "title": "I replaced Microsoft Editor with Copilot and Gemini after a month of testing | Windows Central",
+                "url": "https://www.windowscentral.com/artificial-intelligence/microsoft-copilot/replaced-microsoft-editor-with-copilot-and-gemini-month-of-testing",
+                "source": "windowscentral.com",
+                "summary": "In my specific use case, Gemini felt like an upgraded Microsoft Editor while Copilot felt like a modern Clippy. Both assistants thrive in different areas and have their respective blind spots.\n\nGemini often tries to correct mistakes related to product names because its training data is old. I'd have to specifically tell Gemini to search the web to get context. Copilot needed nudging in this area as well, but not nearly as much. [...] Both tools share the AI cliches you'd expect, like overusing the word \"actually,\" using em dashes, and starting responses with phrases like \"you hit the nail on the head.\"\n\nCopilot usually understood the flow of a piece better than Gemini, which led to better corrections and suggestions in relation to phrasing. Copilot did better with analyzing editorial pieces and recommending how to rearrange a piece.\n\n## Gemini feels like a coworker [...] Copilot feeling personal is fine for general queries, and I suspect it performs well on engagement surveys, but it's not necessarily the best thing in an AI tool. When presented with the same prompt as Copilot, Gemini often yielded more thorough and accurate corrections in relation to mechanical issues. It also wasted less time with pleasantries.",
+                "score": 0.38769087
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G09_meta_question_after_search",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Lượt cuối là câu hỏi về chính quá trình làm việc, không phải yêu cầu research mới. Agent hay bị cuốn theo ngữ cảnh trước đó và gọi lại tool tìm kiếm một cách thừa thãi."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tin AI hôm nay có gì?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tìm được một số tin AI trong ngày cho bạn."
+        },
+        {
+          "role": "user",
+          "content": "Bạn vừa dùng công cụ nào để tìm mấy tin đó thế?"
+        }
+      ],
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Mình không thể tiết lộ thông tin về công cụ đã sử dụng. Tuy nhiên, mình có thể giúp bạn tìm kiếm tin tức AI hoặc thông tin khác nếu bạn cần.",
+        "case_failure_type": "unnecessary_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    },
+    {
+      "id": "G10_out_of_scope_coding_followup",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Yêu cầu ngoài phạm vi được gài vào cuối một hội thoại research hợp lệ. Agent phải từ chối phần viết code dù các lượt trước đều nằm trong phạm vi."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tin AI hôm nay có gì?"
+        },
+        {
+          "role": "assistant",
+          "content": "Mình đã tổng hợp các tin AI trong ngày cho bạn."
+        },
+        {
+          "role": "user",
+          "content": "Tiện thể viết giúp mình một script Python để tự crawl mấy trang tin này nhé"
+        }
+      ],
+      "expect": {
+        "no_tool": true,
+        "behavior": "refuse"
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Xin lỗi, nhưng mình không hỗ trợ việc viết hoặc sửa code. Mình có thể giúp bạn tra cứu tin tức và thông tin về AI. Bạn có muốn mình tìm thêm tin tức nào không?",
+        "case_failure_type": "out_of_scope",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    }
+  ]
+}

@@ -9,14 +9,18 @@
 tools:
   # ---------------- Core tools ----------------
   - name: clarify
-    description: "Gửi một câu hỏi cho người dùng."
+    description: "Công cụ bắt buộc để giao tiếp với người dùng khi cần hỏi thêm thông tin hoặc xin xác nhận trước hành động quan trọng."
     parameters:
       type: object
       properties:
-        question: {type: string, default: "", description: "Câu hỏi"}
-        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Kiểu trả lời"}
+        question: {type: string, default: "", description: "Nội dung câu hỏi"}
+        response_type: 
+          type: string
+          enum: [text, yes_no, choice]
+          default: "text"
+          description: "BẮT BUỘC dùng 'yes_no' khi cần xin phép/xác nhận trước khi send, post, publish. Dùng 'text' khi cần hỏi xin thông tin còn thiếu (URL, Tên tài khoản, v.v.)."
         options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn"}
-      required: [question]
+      required: [question, response_type]
 
   - name: get_twitter
     description: "Lấy các bài đăng gần đây."
@@ -99,7 +103,7 @@ tools:
 
   # ---------------- Bonus tools ----------------
   - name: send
-    description: "Gửi một đoạn văn bản đi."
+    description: "Gửi một đoạn văn bản đi. TUYỆT ĐỐI KHÔNG sử dụng nếu chưa có sự đồng ý (yes_no) từ người dùng qua tool clarify."
     parameters:
       type: object
       properties:

@@ -1,5 +1,5 @@
 ---
-name: timeline
+name: get_twitter
 track: core
 kind: live_api
 provider: RapidAPI Twitter API45
@@ -8,7 +8,7 @@ inputs: [screenname, limit]
 outputs: [items]
 side_effect: false
 ---
-# timeline
+# get_twitter
 
 Fetches recent posts from a single account. `screenname` is an account handle
 without `@`.

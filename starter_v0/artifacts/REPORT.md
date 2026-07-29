@@ -6,9 +6,9 @@
 
 ## Team
 
-- Team:
-- Members:
-- Provider/model:
+- Team: G28-C2-E403
+- Members: Nguyễn Trung Hiếu,
+- Provider/model: OpenRouter
 
 ---
 
@@ -16,9 +16,7 @@
 
 ## A1. Agent này làm được gì
 
-> 1–2 câu mô tả agent dùng để làm gì.
-
-Ví dụ: "Research agent: tìm tin theo từ khóa / theo tài khoản, đọc URL và tổng hợp thành digest."
+>"Research agent: tìm tin theo từ khóa / theo tài khoản, đọc URL và tổng hợp thành digest."
 
 **Link dùng thử (truy cập được trong showdown):**
 

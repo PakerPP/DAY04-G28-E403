@@ -18,7 +18,7 @@ tools:
         options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn"}
       required: [question]
 
-  - name: timeline
+  - name: get_twitter
     description: "Lấy các bài đăng gần đây."
     parameters:
       type: object

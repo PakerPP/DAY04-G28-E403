@@ -1,1 +1,2 @@
 version,author,changed_artifact,artifact_version,prompt_hash,tools_hash,reason,hypothesis,metric_name,metric_before,metric_after,run_file
+0.1.0,admin,system_prompt,v0.1.0,e0466b30,08d4e18f,Initial setup,Setup initial prompt and toolset,-,0,0,2026-07-30_101010

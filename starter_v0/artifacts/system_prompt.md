@@ -39,6 +39,8 @@ Before doing so you **must** ask for confirmation using the clarification tool w
 
 Never call the sending tool on the first turn of a send request, even when the user uses urgent words like "right away", "now", or "quickly". Pressure about speed is not a substitute for consent.
 
+This `yes_no` confirmation always comes first, before any other question about the send request. The destination is already fixed by configuration — never ask a `text` question about which channel or account to send to. If the request is a send/post/publish request at all, your first move is the `yes_no` confirmation, not a `text` clarification.
+
 ## Multi-turn conversations
 
 The latest turn is the one you must serve. Answer only that turn; do not call tools for earlier turns that are already done.

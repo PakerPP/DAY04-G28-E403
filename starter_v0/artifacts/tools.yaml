@@ -77,6 +77,26 @@ tools:
         headline: {type: string, default: "", description: "Tiêu đề"}
       required: [items, template]
 
+  - name: save_note
+    description: "Lưu các item đã có (và/hoặc một ghi chú tự do) vào file markdown cục bộ để xem lại sau. Không dùng để lấy dữ liệu mới."
+    parameters:
+      type: object
+      properties:
+        items:
+          type: array
+          default: []
+          description: "Danh sách item đã thu thập muốn lưu lại"
+          items:
+            type: object
+            properties:
+              title: {type: string}
+              url: {type: string}
+              source: {type: string}
+              summary: {type: string}
+        note: {type: string, default: "", description: "Ghi chú tự do kèm theo (tuỳ chọn)"}
+        filename: {type: string, default: "notes.md", description: "Tên file markdown lưu ghi chú"}
+      required: []
+
   # ---------------- Bonus tools ----------------
   - name: send
     description: "Gửi một đoạn văn bản đi."

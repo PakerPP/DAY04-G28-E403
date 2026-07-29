@@ -1,9 +1,9 @@
 {
-  "run_id": "v3_B_group_openrouter_20260729T172623794757",
+  "run_id": "v3_B_group_openrouter_20260730T004411809045",
   "version": "v3",
-  "artifact_version": "v3+pf497056c9006+tea0909f62d69",
-  "prompt_hash": "f497056c90065cf6d17e16569ec50d978575afc6b2d76ca2224ae9c7405035cd",
-  "tools_hash": "ea0909f62d694d7cf5067a22a05a4aae8aa1b4c0057733e2bc870fa519883cc9",
+  "artifact_version": "v3+p62fe220614c2+te6afe0e02d8c",
+  "prompt_hash": "62fe220614c29e068bffe89e8d82af426a99deacf20ef2c88b8e6d754edd3c18",
+  "tools_hash": "e6afe0e02d8c07bd00f00a8a752b6feb24e82c5bba90af78c645e626cc3a95a1",
   "phase": "B",
   "suite": "group",
   "provider": "openrouter",
@@ -14,7 +14,7 @@
   "dataset_id": "day04_v2_research_group",
   "dataset_role": "group",
   "description": "10 case do nhóm G28-E403 tự thiết kế: 5 single-turn dùng query và 5 multi-turn dùng turns. Bộ case phủ đủ 6 failure_type được phép, tập trung vào các ranh giới mà base eval chỉ chạm tới một lần: từ chối yêu cầu ngoài phạm vi, hỏi lại khi vẫn thiếu thông tin, xác nhận trước hành động gửi ra ngoài, giữ tham số khi người dùng đổi chủ đề, và không gọi tool khi câu hỏi là meta.",
-  "generated_at": "2026-07-29T17:26:23",
+  "generated_at": "2026-07-30T00:44:11",
   "summary": {
     "total_cases": 10,
     "measured_cases": 10,
@@ -85,9 +85,9 @@
                 "source": "@karpathy",
                 "date": "Tue Jul 21 16:53:55 +0000 2026",
                 "metrics": {
-                  "favorites": 48662,
-                  "retweets": 4065,
-                  "views": "3901828"
+                  "favorites": 48694,
+                  "retweets": 4068,
+                  "views": "3907687"
                 }
               },
               {
@@ -110,7 +110,7 @@
                 "date": "Sat Jul 04 19:59:34 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 166,
+                  "retweets": 167,
                   "views": "40696"
                 }
               },
@@ -122,20 +122,20 @@
                 "date": "Tue Jun 30 20:17:18 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 943,
+                  "retweets": 942,
                   "views": "41084"
                 }
               },
               {
-                "title": "RT @EngramLab: https://t.co/CGIef5lIBI",
-                "summary": "RT @EngramLab: https://t.co/CGIef5lIBI",
-                "url": "https://x.com/karpathy/status/2069579404163031082",
+                "title": "This is a new paradigm for interacting with Claude that is significantly more \"inline\" with all the other human activity",
+                "summary": "This is a new paradigm for interacting with Claude that is significantly more \"inline\" with all the other human activity org-wide. Once you do all of the under the hood engineering work to make this \"just work\" (e.g. across tools, integrations, compute environments, memory, security, etc.), Claude basically joins the team in a seamless way - you can talk to it as you would talk to a person and it can help with a very large variety of workloads.\n\nImo this is the 3rd major redesign of LLM UIUX. The first paradigm was that the LLM is a website you go to, the second was that it is an app you download to your computer. This third one is that it is a self-contained, persistent, asynchronous entity with org-wide tools and context, working alongside teams of humans. It really takes a while to wrap your head around it, but it works and it is awesome.",
+                "url": "https://x.com/karpathy/status/2069547676849557725",
                 "source": "@karpathy",
-                "date": "Wed Jun 24 00:32:35 +0000 2026",
+                "date": "Tue Jun 23 22:26:31 +0000 2026",
                 "metrics": {
-                  "favorites": 0,
-                  "retweets": 248,
-                  "views": "39811"
+                  "favorites": 23227,
+                  "retweets": 1915,
+                  "views": "8061000"
                 }
               }
             ]
@@ -202,25 +202,25 @@
             "timeframe": "month",
             "items": [
               {
-                "title": "Digital technologies enabling China's shift toward smart manufacturing - Xinhua",
-                "url": "https://english.news.cn/20260723/89d8abce342447e48771c5e8f0af5c48/c.html",
-                "source": "english.news.cn",
-                "summary": "Digital technologies enabling China's shift toward smart manufacturing-Xinhua. This is how the premium substrate glass panels roll off the cutting-edge G8.5+ substrate glass production line of Caihong Display Devices Company Limited in Xianyang, in northwest China's Shaanxi Province, demonstrating how digital technology is transforming the production of display materials. Caihong's G8.5+ substrate glass production line has broken the long-standing monopoly of overseas companies in the large-size substrate glass market, enabling China to achieve self-reliance and secure supply of high-end display materials, according to an executive of the company who preferred to be anonymous. \"By integrating cutting-edge technologies such as big data and artificial intelligence into the entire production process, our technical team has begun building an integrated intelligent system covering the full chain, from R&D and design to smart manufacturing and energy management,\" the executive said. Caihong's smart G8.5+ substrate glass production line represents a broader trend in which China's manufacturing sector is leveraging digital intelligence to upgrade and break through technological bottlenecks.",
-                "score": 0.18728161
+                "title": "Thúc đẩy chuyển giao công nghệ, thương mại hóa kết quả nghiên cứu trong lĩnh vực chế biến sau thu hoạch",
+                "url": "https://mst.gov.vn/ket-noi-cong-nghe-sau-thu-hoach-dua-ket-qua-nghien-cuu-ra-thi-truong-197260724082632219.htm",
+                "source": "mst.gov.vn",
+                "summary": "Song song với hội thảo, khu trưng bày gần 70 gian hàng giới thiệu các công nghệ, thiết bị, sản phẩm khoa học, công nghệ và đổi mới sáng tạo đã tạo không gian kết nối giữa các tổ chức khoa học và công nghệ với doanh nghiệp, góp phần thúc đẩy hợp tác, chuyển giao công nghệ và mở rộng thị trường. [...] Phát biểu tại hội thảo, ông Huỳnh Văn Tùng, Trưởng Đại diện Văn phòng Bộ Khoa học và Công nghệ tại miền Nam, nhấn mạnh việc tăng cường kết nối giữa các cơ sở khoa học và công nghệ với doanh nghiệp khởi nghiệp là yêu cầu cấp thiết nhằm đưa nhanh các kết quả nghiên cứu vào thực tiễn sản xuất, thúc đẩy thương mại hóa công nghệ và phát triển hệ sinh thái đổi mới sáng tạo trong lĩnh vực chế biến sau thu hoạch. [...] Chuỗi hội thảo, trưng bày công nghệ và kết nối khởi nghiệp sáng tạo tại TP. Hồ Chí Minh mở ra cơ hội hợp tác giữa viện, trường, doanh nghiệp và nhà đầu tư, thúc đẩy chuyển giao công nghệ, thương mại hóa kết quả nghiên cứu và nâng cao giá trị nông sản Việt Nam.",
+                "score": 0.28915635
               },
               {
-                "title": "Indonesia’s nickel challenge shifts from mining to processing - Mining Technology",
-                "url": "https://www.mining-technology.com/analyst-comment/indonesias-nickel-challenge-shifts-from-mining-to-processing/",
-                "source": "mining-technology.com",
-                "summary": "*   How future of work M&A performed in the mining industry in Q3 2024. With a free Mining Technology profile, you can:. Mining news and in-depth feature articles on the latest mining company deals and projects covering trends in mineral exploration with up to date data on the most mined metal and mineral commodities. We may store and access personal data such as cookies, device identifiers or other similar technologies on your device and process such data to enhance site navigation, personalize ads and content when you visit our sites, measure ad and content performance, gain audience insights, analyze our site traffic as well as develop and improve our products and services. Blocking some types of cookies may impact your experience of the site and the services we are able to offer. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.",
-                "score": 0.13717403
+                "title": "Đức Thánh Cha: Công nghệ phải phục vụ sự thật và công ích - Vatican News",
+                "url": "https://www.vaticannews.va/vi/pope/news/2026-07/dtc-leo-xiv-cong-nghe-phai-phuc-vu-su-that-va-cong-ich.html",
+                "source": "vaticannews.va",
+                "summary": "Theo Đức Hồng y, một nền truyền thông dựa trên những nguyên tắc ấy sẽ thúc đẩy đối thoại và tình huynh đệ, để “xy dựng Giêrusalem, chứ không phải tháp Babel”.\n\nPhát biểu trong ngày khai mạc, Đức Tổng Giám mục Rebolledo Salinas nhận định: “Công nghệ và tiến bộ khoa học phải luôn lấy phẩm giá bất khả xm phạm của con người làm nguyên tắc, tiêu chuẩn và mục tiêu tối hậu”.\n\nCảm ơn bạn đã đọc bài viết này. Nếu bạn muốn nhận các bản tin qua email, vui lòng đăng ký newsletter bằng cách nhấp vào đy.. [...] Trong sứ điệp gửi Hội thảo Quốc tế lần thứ VII về Truyền thông của Giáo hội diễn ra tại Chile, Đức Thánh Cha khuyến khích những người làm công tác truyền thông đảm bảo rằng mọi công cụ công nghệ đều được đặt “vào phục vụ chn lý và lợi ích chung”. Truyền thông cần bảo vệ phẩm giá con người, thúc đẩy gặp gỡ, tình huynh đệ và việc loan báo Tin Mừng.\n\nVatican News [...] Khai mạc hội thảo, Đức Hồng y Fernando Chomalí, Tổng giám mục Santiago, đã suy tư về tác động của mạng xã hội, mô tả chúng là những không gian “thực sự nhn văn” bởi vì chúng phản ánh cảm xúc, các mối quan hệ và xung đột. Ngài đề nghị bốn tiêu chí thiết yếu cho truyền thông: chn lý, sự thiện, vẻ đẹp và tính hữu ích. Ngài nhấn mạnh rằng Thông điệp Magnifica humanitas trước hết nói về phẩm giá con người và sự thật, chứ không chỉ về công nghệ.",
+                "score": 0.284333
               },
               {
-                "title": "Cyber espionage: the silent battleground for mining’s mineral intelligence - Mining Technology",
-                "url": "https://www.mining-technology.com/features/cyber-espionage-the-silent-battleground-for-minings-mineral-intelligence/",
-                "source": "mining-technology.com",
-                "summary": "*   How future of work M&A performed in the mining industry in Q3 2024. With a free Mining Technology profile, you can:. Mining news and in-depth feature articles on the latest mining company deals and projects covering trends in mineral exploration with up to date data on the most mined metal and mineral commodities. We may store and access personal data such as cookies, device identifiers or other similar technologies on your device and process such data to enhance site navigation, personalize ads and content when you visit our sites, measure ad and content performance, gain audience insights, analyze our site traffic as well as develop and improve our products and services. This information might be about you, your preferences, or your device, and is mostly used to make the site work as you expect. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.",
-                "score": 0.13353972
+                "title": "'Phát triển công nghệ lượng tử cần đầu tư khoa học cơ bản' - Báo VnExpress",
+                "url": "https://vnexpress.net/phat-trien-cong-nghe-luong-tu-can-dau-tu-khoa-hoc-co-ban-5101008.html",
+                "source": "vnexpress.net",
+                "summary": "Ông cho rằng để phát triển công nghệ lượng tử, Việt Nam cần đầu tư cho khoa học cơ bản, xy dựng đội ngũ nghiên cứu trong các lĩnh vực vật lý lượng tử, khoa học vật liệu, quang tử và vật lý nguyên tử.\n\n\"Khi nói về công nghệ lượng tử là một cu chuyện rất dài. Đằng sau công nghệ lượng tử là vật lý lượng tử. Không có vật lý lượng tử hay cơ học lượng tử thì không có công nghệ lượng tử\", giáo sư Đàm Thanh Sơn nói.",
+                "score": 0.26764184
               }
             ]
           }
@@ -246,7 +246,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Tôi không hỗ trợ yêu cầu dịch thuật. Tuy nhiên, tôi có thể giúp bạn tìm kiếm thông tin hoặc tin tức liên quan đến AI và công nghệ.",
+        "actual_text": "Xin lỗi, nhưng tôi không hỗ trợ yêu cầu dịch thuật. Tuy nhiên, tôi có thể giúp bạn tìm kiếm thông tin hoặc tin tức liên quan đến AI và công nghệ. Bạn cần tìm gì?",
         "case_failure_type": "out_of_scope",
         "observed_mismatch": null,
         "failure_type": null,
@@ -273,7 +273,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Tôi không thể tiết lộ thông tin cụ thể về các nguồn mà tôi sử dụng. Tuy nhiên, tôi có thể tìm kiếm tin tức và thông tin trên web, đọc các bài đăng gần đây từ tài khoản mạng xã hội, và tóm tắt nội dung từ các URL cụ thể. Nếu bạn cần thông tin nào, hãy cho tôi biết!",
+        "actual_text": "Tôi không thể cung cấp thông tin chi tiết về các nguồn dữ liệu mà tôi sử dụng. Tuy nhiên, tôi có thể tìm kiếm tin tức và thông tin trên web, đọc các bài đăng gần đây từ tài khoản mạng xã hội cụ thể, và tóm tắt nội dung từ các URL mà bạn cung cấp. Nếu bạn có yêu cầu cụ thể nào, hãy cho tôi biết!",
         "case_failure_type": "unnecessary_tool",
         "observed_mismatch": null,
         "failure_type": null,
@@ -448,10 +448,9 @@
           {
             "name": "lookup",
             "args": {
-              "query": "chip bán dẫn",
+              "query": "tin tức chip bán dẫn",
               "topic": "news",
-              "timeframe": "week",
-              "max_results": 5
+              "timeframe": "week"
             }
           }
         ],
@@ -465,51 +464,50 @@
         {
           "tool": "lookup",
           "args": {
-            "query": "chip bán dẫn",
+            "query": "tin tức chip bán dẫn",
             "topic": "news",
-            "timeframe": "week",
-            "max_results": 5
+            "timeframe": "week"
           },
           "result": {
             "tool": "web_search",
-            "query": "chip bán dẫn",
+            "query": "tin tức chip bán dẫn",
             "topic": "news",
             "timeframe": "week",
             "items": [
               {
-                "title": "Stock Market Today: Dow rises 670 points after strong earnings from Coca-Cola and Sherwin-Williams; Nasdaq erases early losses despite a chip selloff - MarketWatch",
-                "url": "https://www.marketwatch.com/livecoverage/stock-market-today-s-p-500-nasdaq-dow-earnings-federal-reserve-interest-rate-consumer-confidence",
-                "source": "marketwatch.com",
-                "summary": "# Stock Market Today: Dow rises 670 points after strong earnings from Coca-Cola and Sherwin-Williams; Nasdaq erases early losses despite a chip selloff. ## Chip stocks are extending the selloff on Tuesday, but the Dow is rising after strong earnings from Coca-Cola and Sherwin-Williams. #### Markets still can't decide if a rate hike is coming or not this week. #### Nasdaq 100 is on pace to close in correction territory. #### It's a tale of two markets on Wall Street: Solid earnings lift value stocks, but chip names drag market lower. #### Nasdaq slides as chip selloff deepens, Dow rises 350 points at the open. #### Global oil prices dip below $84 a barrel as U.S. and Iran continue a mutual pause in strikes. #### Asian chip stocks clobbered as sentiment toward AI trade continues to sour. **Here are the top stories to read during Tuesday's trading:**. Intraday Data provided by FACTSET and subject to terms of use.",
-                "score": 0.13745166
-              },
-              {
-                "title": "AI sell-off intensifies as investors ditch chip stocks - The Guardian",
-                "url": "https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung",
-                "source": "theguardian.com",
-                "summary": "# AI sell-off intensifies as investors ditch chip stocks. Samsung and SK Hynix fall by more than 10% amid renewed fears over AI spending and Chinese competition. The sell-off in AI stocks has intensified, driving South Korea’s stock market down to its lowest level in three months. Investors continued to ditch chip stocks on Tuesday, amid rising concerns about the huge amount of borrowing among AI companies to fund their datacentre expansion plans. Analysts attributed the sell-off to renewed worries over AI investment spending, and competition from cheaper Chinese companies, after a report by the Information that China has begun mass production of homegrown deep ultraviolet(DUV) chip-making tools. “We believe the market was likely spooked by the progress of China’s chip-making equipment capabilities, and was worried that this progress would threaten the competitive position of global chip making and chip equipment leaders,” said Jing Jie Yu, an equity analyst at Morningstar, adding that the sell-off was “largely a kneejerk reaction and overdone”.",
-                "score": 0.12664494
-              },
-              {
-                "title": "Chip stocks are crashing as the rest of the market barely flinches: AlphaCheck - Yahoo Finance",
-                "url": "https://finance.yahoo.com/markets/article/chip-stocks-are-crashing-as-the-rest-of-the-market-barely-flinches-alphacheck-161342600.html",
+                "title": "AI Chip Stocks Tumble as Nvidia, AMD Lead Market Selloff Over Spending Fears - Yahoo Finance",
+                "url": "https://finance.yahoo.com/technology/ai/articles/ai-chip-stocks-tumble-nvidia-195907285.html",
                 "source": "finance.yahoo.com",
-                "summary": "2. Best 0% APR cards. 3. Best balance transfer cards. 2. Best high-yield savings accounts. 3. Best money market accounts. # Chip stocks are crashing as the rest of the market barely flinches: AlphaCheck. The PHLX Semiconductor Index (^SOX) briefly broke below 11,000 Tuesday, now down over 25% from its June peak, as another wave of selling swept from South Korea through US chip stocks. The Roundhill Memory ETF (DRAM) fell roughly 11% Tuesday and is down over 40% from its June high. The S&P 500 equal-weight index (^SP500EW) rallied 1% to a record high Tuesday, even as the chip sell-off dragged down the major indexes. That strength also shows up in the S&P 500 advance-decline line, which bounced from its former ceiling last week and hit a record high of its own Tuesday. *Jared Blikre is the global markets and data editor for Yahoo Finance. **Read the latest financial and business news from Yahoo Finance**.",
-                "score": 0.11906992
+                "summary": "3. Most active penny stocks. 2. Best 0% APR cards. 3. Best balance transfer cards. 2. Best high-yield savings accounts. 3. Best money market accounts. 4. Best free checking accounts. 3. How to get approved. # AI Chip Stocks Tumble as Nvidia, AMD Lead Market Selloff Over Spending Fears. AI-related semiconductor stocks moved lower on Tuesday as investors weighed concerns around artificial intelligence infrastructure spending, competition, and potential returns on large-scale investments. Shares of Advanced Micro Devices (NASDAQ:AMD) fell about 10%, while Nvidia (NASDAQ:NVDA) declined around 2% during the session. GuruFocus has detected 3 Warning Signs with NVDA. SK hynix (NASDAQ:SKHY) dropped about 9%, while Micron Technology (NASDAQ:MU) fell nearly 10% amid broader concerns about AI-related demand expectations and increasing competition in the memory market. Investors also monitored developments in China's semiconductor industry and the possibility of additional supply pressure. Several chip equipment and networking companies, including ASML (ASML), Applied Materials (NASDAQ:AMAT), and Marvell Technology (NASDAQ:MRVL), also traded lower as market sentiment across AI hardware stocks weakened.",
+                "score": 0.079217605
               },
               {
-                "title": "Semiconductor sell-off sees Kospi temporarily halted - CNBC",
-                "url": "https://www.cnbc.com/video/2026/07/28/semiconductor-sell-off-sees-kospi-temporarily-halted.html",
-                "source": "cnbc.com",
-                "summary": "Monday - Friday, 08:00 - 11:00 CET | 14:00 - 17:00 HK/SG. # Semiconductor sell-off sees Kospi temporarily halted. A semiconductor sell-off in Asia is seemingly triggered by a report that China has begun developing its own lithography machines. Asian stocks plunge, spreading to other chip names worldwide.",
-                "score": 0.11851789
+                "title": "Memory-Chip Stocks Micron, SK Hynix Drop After China Rival’s IPO - Investor's Business Daily",
+                "url": "https://www.investors.com/news/technology/memory-chip-stocks-micron-sk-hynix-cxmt-ipo/",
+                "source": "investors.com",
+                "summary": "*   IBD 50 Stocks To Watch. *   How To Invest In Stocks. # Memory-Chip Stocks Micron, SK Hynix Drop After China Rival's IPO. Memory-chip stocks **Micron Technology** (MU) and **SK Hynix** (SKHY) fell Monday after Chinese rival ChangXin Memory Technologies, known as CXMT, rocketed in its initial public offering on the Shanghai Stock Exchange. How A Global Memory Chip Boom Crowned A New Stock Market Leader. South Korea’s KOSPI index has surged 80% this year, easily outperforming the Nasdaq thanks to an AI memory chip boom and key market reforms. NOW PLAYING How A Global Memory Chip Boom Crowned A New Stock Market Leader. Meanwhile, **Apple** (AAPL) has been lobbying the White House to allow it to use Chinese memory chips in devices sold outside of the U.S. Apple is seeking relief from memory-chip shortages and surging prices. *   Image 9: Micron stock memory chip stocksMemory-Chip Stocks Micron, SK Hynix Drop After China Rival's IPO.",
+                "score": 0.07529205
               },
               {
                 "title": "Chip stocks are getting hammered — but China's hottest new listing is holding up - Business Insider",
                 "url": "https://www.businessinsider.com/kospi-stock-index-sk-hynix-samsung-nikkei-kioxia-cxmt-2026-7",
                 "source": "businessinsider.com",
                 "summary": "# Chip stocks are getting hammered — but China's hottest new listing is holding up. Chip stocks sold off across Asia on Tuesday, with South Korean and Japanese semiconductor heavyweights leading a broad retreat as investors pulled back from some of the biggest winners of the AI boom. Shares in China's hottest new chip stock fell as much as 7.7% at the open before recovering to trade 1.6% lower by midday. That optimism is supported by expectations of a multiyear expansion in China's memory-chip industry. Look out for an alert in your inbox the next time publishes a story! Every time a new story is published, you’ll get an alert straight to your inbox! Look out for an alert in your inbox the next time a new story is published!",
-                "score": 0.10833058
+                "score": 0.06841928
+              },
+              {
+                "title": "Chip Stocks Extend Pullback Amid AI Bubble Fears - Investopedia",
+                "url": "https://www.investopedia.com/market-update-chip-stocks-extend-pullback-amid-ai-bubble-fears-12028864",
+                "source": "investopedia.com",
+                "summary": "* Strong Earnings Aren't Giving Tech Stocks a Boost. He is an experienced journalist who has covered everything from the latest in business and tech news to sports and international news like the war in Ukraine for respected outlets like Business Insider and Newsweek. Shares of a number of chipmakers fell today, extending a rough stretch for the AI trade and dragging the Nasdaq lower. Earnings reports from a number of Magnificent Seven firms this week could give investors their latest look into the spending plans of big tech companies, which could benefit chipmaker stocks. Analysts have noted that investors haven’t been rewarding solid tech earnings lately the way they used to, amid worries around the sustainability of AI spending. Investors Are Buying In. The AI Trade Is Off to a Hot Start This Week as Chip, Memory Stocks Surge. 5 Things to Know Before the Stock Market Opens on Monday. 5 Things to Know Before the Stock Market Opens on Tuesday.",
+                "score": 0.061317287
+              },
+              {
+                "title": "Sandisk and More Chip Stocks Hit China Roadblocks - Barron's",
+                "url": "https://www.barrons.com/articles/sandisk-asml-chip-stocks-cxmt-china-fd971457",
+                "source": "barrons.com",
+                "summary": "This copy is for your personal, non-commercial use only. Distribution and use of this material are governed by our Subscriber Agreement and by copyright law. # Sandisk and More Chip Stocks Hit China Roadblocks. A Chinese company has begun mass producing chip-making machines, according to a report. China threw up a couple of roadblocks for chips stocks Monday, forcing Sandisk SNDK. -11.02%, ASML Holding ASML. -5.80%, and a host of others into the ditch. ### Chart of the Week: Why Wheaton Precious Metals Stock Looks Poised for a Rebound. # Why J.P. Morgan Says the ASML Stock Selloff Is ‘Disproportionate’. ASML manufactures chip-making equipment. ASML Holding stock tumbled Monday after reports said a Chinese state-backed company is mass-producing chip-making machines. # CXMT, Sandisk, ASML, SpaceX, D-Wave Quantum, Workday, and More Stocks That Explain Today’s Market. A chip stock slide weighed on the major indexes following reports that a state-backed Chinese company has begun mass producing chip-making machines.",
+                "score": 0.059718315
               }
             ]
           }
@@ -587,39 +585,39 @@
             "timeframe": "week",
             "items": [
               {
-                "title": "Google closes in on another billion user product with Gemini - TechCrunch",
-                "url": "https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini/",
+                "title": "Google’s Gemini nears billion-user milestone",
+                "url": "https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini",
                 "source": "techcrunch.com",
-                "summary": "# Google closes in on another billion user product with Gemini. Google is about to add another name to its long list of products with more than a billion users, a list that already includes Search, Gmail, Drive, Android, YouTube, and Chrome. The company said during its Q2 2026 call that the AI assistant Gemini now has over 950 million monthly users. The company noted that Gemini users have tripled from last year. Earlier in February, it said that the Gemini app crossed 750 million monthly active users. With this growth, Google’s assistant is in line to compete more closely with OpenAI’s ChatGPT, which hit 1 billion monthly active users in June. Apart from users on Android, the Gemini app has found a strong user base on iOS with launches like the Nano Banana image generation model. Google also noted that through hardware engineering, it has reduced the cost of AI mode for the company, despite introducing new models and features.",
+                "summary": "The company noted that Gemini users have tripled from last year. Earlier, in February, it said that the Gemini app crossed 750 million monthly active users. With this growth, Google’s assistant is in line to compete more closely with OpenAI’s ChatGPT, which hit 1 billion monthly active users in June. [...] Apart from users on Android, the Gemini app has found a strong user base on iOS with launches like the Nano Banana image generation model. According to Appfigures, the app has been downloaded over 137 million times on iOS in the last 12 months.\n\nIn its latest “State of AI” report, the analytics firm Sensor Tower noted that ChatGPT’s market share among AI assistants fell below 50% for the first time. The report, which looked at H1 2026, also noted that Gemini’s share rose to 27.7%. [...] Ivan Mehta\n\n7:52 AM PDT · July 23, 2026\n\n[](\n\nGoogle is about to add another name to its long list of products with more than a billion users, a list that already includes Search, Gmail, Drive, Android, YouTube, and Chrome. The company said during its Q2 2026 call that the AI assistant Gemini now has over 950 million monthly users.",
                 "score": 0.5550741
               },
               {
-                "title": "Google's Gemini nips at ChatGPT's heels as it nears 1 billion users - Business Insider",
+                "title": "Gemini sends $10M in Bitcoin to Trump PAC amid CFTC case review",
+                "url": "https://crypto.news/gemini-sends-10m-in-bitcoin-to-trump-pac-amid-cftc-case-review",
+                "source": "crypto.news",
+                "summary": "The CFTC sued Gemini in June 2022. The agency alleged that the exchange made false or misleading statements while seeking approval for a Bitcoin futures product. Gemini settled the case in January 2025 without admitting or denying the findings. The consent order required a $5 million civil penalty and imposed a permanent injunction. [...] Share\n\nGemini Trust Company sent more than $10 million in Bitcoin to MAGA Inc., a super political action committee that supports President Donald Trump.\n\nSummary\n\n Gemini sent two Bitcoin contributions totaling over $10 million to Trump-supporting super PAC MAGA Inc.\n The donations followed Gemini and CFTC’s joint request to vacate ongoing terms of their settlement.\n Gemini will not recover its $5 million penalty even if the court grants relief requested. [...] The letter states Warren’s position and does not prove that Gemini’s political giving shaped the agency’s action. The CFTC said its decision followed a review of the investigation, evidence, litigation tactics and current policy. It also said Gemini had been a fraud victim and that the earlier complaint relied heavily on an account lacking credibility.",
+                "score": 0.48221022
+              },
+              {
+                "title": "Google’s ads biz gets boost from World Cup hype, Gemini improvements | Marketing Dive",
+                "url": "https://www.marketingdive.com/news/googles-ads-biz-gets-boost-from-world-cup-hype-gemini-improvements/826008",
+                "source": "marketingdive.com",
+                "summary": "The precision provided by Gemini is also helping to advance Google’s bets on commerce-enabled shopping campaigns, which saw a 20% improvement in delivering highly relevant ads thanks to AI.\n\n“It's really important to understand that Gemini supercharges our ability … to understand what people are looking for and match the right ads,” Google Chief Business Officer Philipp Schindler said on an earnings call with investors. [...] Executives said that Gemini AI is delivering both increased relevance to users and greater value to advertisers in search, the company’s largest business segment. Search and other revenues were up nearly 17% YoY to $63.3 billion for the period ended June 30. The impressive gains back up “Google's claim that AI is additive to search, not a replacement,” Emarketer principal analyst Nate Elliott said over email. [...] Peter Adams's headshot\n\nGoogle's Gemini AI interface is displayed on a digital tablet screen\n\nGoogle’s ad revenue grew 14% year over year to $81.6 billion in Q2 as artificial intelligence-powered features bolstered marketing performance, according to an earnings statement from parent Alphabet. Total revenue increased 24% YoY to $119.8 billion, above expectations.",
+                "score": 0.43007612
+              },
+              {
+                "title": "Google earnings: Gemini app nears 1 billion users, rivaling ChatGPT",
                 "url": "https://www.businessinsider.com/google-q2-2026-earnings-gemini-closing-in-chatgpt-1-billion-2026-7",
                 "source": "businessinsider.com",
-                "summary": "Google's Gemini is nearing the big One Billion. The company said on Wednesday that the Gemini AI app now has 950 million monthly active users. We can keep sources anonymous.Some of Hugh's scoops and features:– Google told staff worried about Pentagon AI deals that it's 'leaning more' into national security contracts– Google is building its answer to OpenClaw– Google to let software engineers use AI assistants in job interviews– Larry Page is moving business out of California ahead of wealth tax– Internal document reveals Meta's AI targets– Google pushes more employees to use AI, and not just engineers– Big Tech's AI love fest is getting messy– The secrets of Larry Page's money man– The Goldman prodigy behind Silicon Valley's city of the future– Alphabet's Verily plans to to restructure ahead of fresh investment– How Google found its AI hype guy– 'Godfather of AGI' Ben Goertzel courted Epstein for funding, emails reveal– Inside the family offices of Larry Page and Sergey Brin. Look out for an alert in your inbox the next time publishes a story! Look out for an alert in your inbox the next time a new story is published!",
-                "score": 0.43395805
+                "summary": "Google has been rolling out more cost-friendly and faster models. This week, it rolled out three models, including itsGemini 3.6 Flash model, which the company said is better at tasks such as coding than its predecessor while using fewer tokens,making it more cost-effective.\n\nGoogle's new frontier 3.5 Pro model is still delayed, even as Google this week teased that early work on Gemini 4 had started. These latest user numbers on Gemini suggest that it's still scooping up users quite nicely. [...] That puts it close behind OpenAI's ChatGPT, which has around 1 billion monthly users per recent data from Sensor Tower.\n\nTo track Google's trajectory here, it said in October that the Gemini app was seeing around 650 million monthly active users. In February, reporting its Q4 2025 earnings, Google said that figure had risen to over 750 million. [...] 0\n\nAudio 1\n\n1 min\n\nThis story is available exclusively to Business Insider subscribers. Become an Insider and start reading now.Have an account? Log in.\n\nGoogle's Gemini is nearing the big One Billion.\n\nThe company said on Wednesday that the Gemini AI app now has 950 million monthly active users. On the earnings call, CEO Sundar Pichai also said that daily active users have tripled in the past year.",
+                "score": 0.38595363
               },
               {
-                "title": "Gemini Gems: What They Are and How to Make One - CNET",
-                "url": "https://www.cnet.com/tech/services-and-software/gemini-gems-what-they-are-and-how-to-make-one/",
-                "source": "cnet.com",
-                "summary": "# Gemini Gems: What They Are and How to Make One. Tucked away in Gemini are custom AI experts you’re probably not using. Blake has over a decade of experience writing for the web, with a focus on mobile phones, where he covered the smartphone boom of the 2010s and the broader tech scene.… Read full bio. Once you’ve set a Gem’s instructions and function, you can continue to add to it so that it becomes an expert in that subject and can help you brainstorm, create and more. Below, we’ll detail how to get started with Gemini Gems and when you should consider using another option, such as Gemini Notebooks, to perform the task you’re trying to accomplish. Gemini has a handful of premade Gems that you can edit to make your own if you don’t know where to get started.",
-                "score": 0.42577294
-              },
-              {
-                "title": "Gemini task automation expands to 40+ apps, Samsung shows off two more Android XR glasses - 9to5Google",
-                "url": "https://9to5google.com/2026/07/22/gemini-task-automation-samsung/",
-                "source": "9to5google.com",
-                "summary": "# Gemini task automation expands to 40+ apps, Samsung shows off two more Android XR glasses. At Galaxy Unpacked, Google announced a handful of Gemini updates for the Galaxy Z Fold 8 Ultra, Fold 8, and Flip 8. On the Android front, these new devices feature the upgraded “native migration experience” that allows you to “transfer even more data types from an iPhone wirelessly.” Part of Android 17, this includes your Google Account, passwords, Wi-Fi credentials, and eSIM. This is also rolling out to Pixel and coming to more Android devices after that. The Galaxy Z Fold 8 Ultra, Fold 8, and Flip 8 come with six months of Google AI Pro. On the wearables front, Gemini on the Galaxy Watch 9 can be triggered by just raising your wrist. Be sure to check out our homepage for all the latest news, and follow 9to5Google on Twitter, Facebook, and LinkedIn to stay in the loop. *Check out 9to5Google on YouTube for more news:*.",
-                "score": 0.4081122
-              },
-              {
-                "title": "Gemini Spark rolling out to Google AI Pro users in the US - 9to5Google",
-                "url": "https://9to5google.com/2026/07/23/gemini-spark-google-ai-pro-us/",
-                "source": "9to5google.com",
-                "summary": "# Gemini Spark rolling out to Google AI Pro users in the US. After launching in May with AI Ultra, Gemini Spark is now rolling out to Google AI Pro subscribers in the US. Gemini Spark is Google’s personal AI agent for automating complex tasks. On the web, you’ll see a new tab at the top of the navigation drawer, while it’s a new page on Android and iOS. With Spark, Google is introducing the concept of Skills (reusable instructions with additional context) and Schedules (automated triggers like time or conditions), with a Task being the high-level goal you want accomplished. You can “have up to 15 tasks running at a given time,” with Spark using the same compute-based usage limits as the rest of Gemini. The Gemini macOS app lets you start tasks, like browsing files, from your phone. **Important:** To edit shared documents, spreadsheets, and presentations, you’ll need to review and confirm Gemini Spark’s planned edits.",
-                "score": 0.4069804
+                "title": "Introducing Gemini Spark: Your 24/7 personal AI agent in ...",
+                "url": "https://blog.google/intl/en-in/company-news/technology/introducing-gemini-spark-your-247-personal-ai-agent-in-country",
+                "source": "blog.google",
+                "summary": "Available to Google AI Ultra and Pro subscribers, Gemini Spark fundamentally shifts AI from a reactive assistant that answers your questions into an active partner that gets real work done for you, even while you’re sleeping. Driven by Gemini 3.6 Flash, this new tool is designed to handle your time-consuming digital chores under your direction, giving you time back to focus on what matters most. [...] Meet Gemini Spark: your 24/7 personal AI agent that can do exactly that. Officially expanding to Google AI Pro subscribers in India over the next few weeks, Spark works quietly in the background - even when your laptop is closed or your phone is locked. It operates on Google’s secure cloud infrastructure, which means it connects natively with your Google Workspace tools like Gmail, Docs, and Sheets with zero setup required.",
+                "score": 0.38124317
               }
             ]
           }
@@ -658,7 +656,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Mình không thể tiết lộ thông tin về công cụ đã sử dụng. Tuy nhiên, mình có thể tìm kiếm tin tức và thông tin về AI và công nghệ, đọc bài viết từ các liên kết cụ thể, hoặc tóm tắt nội dung từ các URL. Bạn cần tìm hiểu thêm về điều gì?",
+        "actual_text": "Mình không thể tiết lộ thông tin về công cụ đã sử dụng. Tuy nhiên, mình có thể giúp bạn tìm kiếm tin tức AI hoặc thông tin khác nếu bạn cần.",
         "case_failure_type": "unnecessary_tool",
         "observed_mismatch": null,
         "failure_type": null,
@@ -698,7 +696,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Tôi không thể giúp bạn viết hoặc sửa mã code. Tuy nhiên, tôi có thể tìm kiếm tin tức AI hoặc thông tin liên quan cho bạn. Bạn có muốn tôi làm điều đó không?",
+        "actual_text": "Xin lỗi, nhưng mình không hỗ trợ viết mã hoặc tạo script. Tuy nhiên, mình có thể giúp bạn tìm kiếm thông tin về các tin tức AI hoặc tóm tắt nội dung từ các trang web. Bạn cần thông tin gì cụ thể?",
         "case_failure_type": "out_of_scope",
         "observed_mismatch": null,
         "failure_type": null,
